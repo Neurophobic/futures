@@ -21,18 +21,16 @@ var zoomWidth = (mapW-scaler*mapW)/2
 var zoomHeight = (windowH-scaler*windowH)/2
 
 var svg = body
-   .append("svg")
-   .attr("class","thesvg")
-   .attr("width", 2000)
-   .attr("height", windowH-72)
-
+    .append("svg")
+    .attr("class","thesvg")
+    .attr("width", 2000)
+    .attr("height", windowH-72)
     .call(d3.behavior.zoom().on("zoom", function () {
-    svg.attr("transform", "translate(" + d3.event.translate + ")" + " scale(" + d3.event.scale + ")")
-  }))
-  .append("g");
+        svg.attr("transform", "translate(" + d3.event.translate + ")" + " scale(" + d3.event.scale + ")")
+    }))
+    .append("g");
 
-
- var container = svg.append("g");
+var container = svg.append("g");
 
 function toRadians (angle) {
   return angle * (Math.PI / 180);
@@ -53,7 +51,6 @@ function getLinearRot(div, place){
 
     return res;
 };
-
 
 
 var line1 = svg.append("line")          
@@ -97,6 +94,7 @@ var centerCircle = svg.append("circle").attr({
 //exponential
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 var exponentialCircle = svg.append("circle").attr({
     cx: centerX,
@@ -365,6 +363,7 @@ expoGroup8.append("text")
 //linear
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 
 var linearCircle = svg.append("circle").attr({
