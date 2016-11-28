@@ -48,21 +48,49 @@ function toRadians (angle) {
   return angle * (Math.PI / 180);
 }
 
+function getExpoRot(div, place){
+    var xRot = centerX + ((exponentialCircleR) * Math.sin(toRadians((360/div)*place)));
+    var yRot = centerY - ((exponentialCircleR) * Math.cos(toRadians((360/div)*place)));
+    var res = xRot +","+ yRot;
+
+    return res;
+}
+
+
+
+var line1 = svg.append("line")          
+    .style("stroke", "black")  
+    .attr("x1", centerX)     
+    .attr("y1", centerY)      
+    .attr("x2", centerX + ((exponentialCircleR+300) * Math.sin(toRadians(360/8))))     
+    .attr("y2", centerY - ((exponentialCircleR+300) * Math.cos(toRadians(360/8))));
+
+var line2 = svg.append("line")          
+    .style("stroke", "black")  
+    .attr("x1", centerX)     
+    .attr("y1", centerY)      
+    .attr("x2", centerX + ((exponentialCircleR+300) * Math.sin(toRadians((360/8)*3))))     
+    .attr("y2", centerY - ((exponentialCircleR+300) * Math.cos(toRadians((360/8)*3))));
+
+var line3 = svg.append("line")          
+    .style("stroke", "black")  
+    .attr("x1", centerX)     
+    .attr("y1", centerY)      
+    .attr("x2", centerX + ((exponentialCircleR+300) * Math.sin(toRadians((360/8)*5))))     
+    .attr("y2", centerY - ((exponentialCircleR+300) * Math.cos(toRadians((360/8)*5))));
+
+var line5 = svg.append("line")          
+    .style("stroke", "black")  
+    .attr("x1", centerX)     
+    .attr("y1", centerY)      
+    .attr("x2", centerX + ((exponentialCircleR+300) * Math.sin(toRadians((360/8)*7))))     
+    .attr("y2", centerY - ((exponentialCircleR+300) * Math.cos(toRadians((360/8)*7))));   
+
 //exponential
 
-var defs = svg.append('svg:defs');
 
-defs.append("svg:pattern")
-    .attr("id", "expo_pic")
-    .attr("width", 200)
-    .attr("height", 200)
-    .attr("patternUnits", "userSpaceOnUse")
-    .append("svg:image")
-    .attr("xlink:href", 'http://placekitten.com/g/200/200')
-    .attr("width", 200)
-    .attr("height", 200)
-    .attr("x", 0)
-    .attr("y", 0);
+
+
 
 
 var exponentialCircle = svg.append("circle").attr({
@@ -78,73 +106,135 @@ var expoGroup1 = svg.append("g")
     .attr("class", "circle-container")
     .attr("transform", "translate(" + expoBubbleOriginX + ", " + expoBubbleOriginY + ")");
 
+var expoGroup2 = svg.append("g")
+    .attr("class", "circle-container")
+    .attr("transform", "translate(" + expoBubbleOriginX + ", " + expoBubbleOriginY + ")");
+
+var expoGroup3 = svg.append("g")
+    .attr("class", "circle-container")
+    .attr("transform", "translate(" + expoBubbleOriginX + ", " + expoBubbleOriginY + ")");
+
+var expoGroup4 = svg.append("g")
+    .attr("class", "circle-container")
+    .attr("transform", "translate(" + expoBubbleOriginX + ", " + expoBubbleOriginY + ")");
+
+var expoGroup5 = svg.append("g")
+    .attr("class", "circle-container")
+    .attr("transform", "translate(" + expoBubbleOriginX + ", " + expoBubbleOriginY + ")");
+
+var expoGroup6 = svg.append("g")
+    .attr("class", "circle-container")
+    .attr("transform", "translate(" + expoBubbleOriginX + ", " + expoBubbleOriginY + ")");
+
+var expoGroup7 = svg.append("g")
+    .attr("class", "circle-container")
+    .attr("transform", "translate(" + expoBubbleOriginX + ", " + expoBubbleOriginY + ")");
+
+
+
 expoGroup1.append("circle").attr({
     cx:0,
     cy:0,
     r:linearBubbleR,
-    fill:"green"
+    fill:"white"
 });
 
-// expoGroup1.transition().attr("transform", "rotate("+(360/8)*1+", "+centerX+","+centerY+")");
-// var xRot = centerX + ((exponentialCircleR) * Math.sin(120));
-// var yRot = centerY - ((exponentialCircleR) * Math.cos(120));
+expoGroup2.append("circle").attr({
+    cx:0,
+    cy:0,
+    r:linearBubbleR,
+    fill:"white"
+});
 
-var xRot = centerX + ((exponentialCircleR) * Math.sin(toRadians(360/8)));
-var yRot = centerY - ((exponentialCircleR) * Math.cos(toRadians(360/8)));
-expoGroup1.transition().attr("transform", "translate("+xRot+","+yRot+")");
+expoGroup3.append("circle").attr({
+    cx:0,
+    cy:0,
+    r:linearBubbleR,
+    fill:"white"
+});
+
+expoGroup4.append("circle").attr({
+    cx:0,
+    cy:0,
+    r:linearBubbleR,
+    fill:"white"
+});
+
+expoGroup5.append("circle").attr({
+    cx:0,
+    cy:0,
+    r:linearBubbleR,
+    fill:"white"
+});
+
+expoGroup6.append("circle").attr({
+    cx:0,
+    cy:0,
+    r:linearBubbleR,
+    fill:"white"
+});
+
+expoGroup7.append("circle").attr({
+    cx:0,
+    cy:0,
+    r:linearBubbleR,
+    fill:"white"
+});
+
+
+
+expoGroup1.append("svg:image")
+.attr("x",-expoBubbleR)
+.attr("y",-expoBubbleR)
+.attr("width", 180)
+.attr("height", 180)
+.attr("xlink:href", "img/scope.svg");
+
+expoGroup2.append("svg:image")
+.attr("x",-expoBubbleR)
+.attr("y",-expoBubbleR)
+.attr("width", 180)
+.attr("height", 180)
+.attr("xlink:href", "img/scope.svg");
+
+expoGroup3.append("svg:image")
+.attr("x",-expoBubbleR)
+.attr("y",-expoBubbleR)
+.attr("width", 180)
+.attr("height", 180)
+.attr("xlink:href", "img/scope.svg");
+
+expoGroup4.append("svg:image")
+.attr("x",-expoBubbleR)
+.attr("y",-expoBubbleR)
+.attr("width", 180)
+.attr("height", 180)
+.attr("xlink:href", "img/scope.svg");
+
+expoGroup5.append("svg:image")
+.attr("x",-expoBubbleR)
+.attr("y",-expoBubbleR)
+.attr("width", 180)
+.attr("height", 180)
+.attr("xlink:href", "img/scope.svg");
+
+expoGroup6.append("svg:image")
+.attr("x",-expoBubbleR)
+.attr("y",-expoBubbleR)
+.attr("width", 180)
+.attr("height", 180)
+.attr("xlink:href", "img/scope.svg");
+
+expoGroup7.append("svg:image")
+.attr("x",-expoBubbleR)
+.attr("y",-expoBubbleR)
+.attr("width", 180)
+.attr("height", 180)
+.attr("xlink:href", "img/scope.svg");
 
 
 
 
-var expoBubble1 = svg.append("circle").attr({
-    cx: expoBubbleOriginX,
-    cy: expoBubbleOriginY,
-    r: linearBubbleR,
-    fill:"black"
-}); 
-
-
-var expoBubble2 = svg.append("circle").attr({
-    cx: expoBubbleOriginX,
-    cy: expoBubbleOriginY,
-    r: linearBubbleR,
-    fill:"black"
-}); 
-
-var expoBubble3 = svg.append("circle").attr({
-    cx: expoBubbleOriginX,
-    cy: expoBubbleOriginY,
-    r: linearBubbleR,
-    fill:"black"
-}); 
-
-var expoBubble4 = svg.append("circle").attr({
-    cx: expoBubbleOriginX,
-    cy: expoBubbleOriginY,
-    r: linearBubbleR,
-    fill:"black"
-}); 
-
-var expoBubble5 = svg.append("circle").attr({
-    cx: expoBubbleOriginX,
-    cy: expoBubbleOriginY,
-    r: linearBubbleR,
-    fill:"black"
-}); 
-
-var expoBubble6 = svg.append("circle").attr({
-    cx: expoBubbleOriginX,
-    cy: expoBubbleOriginY,
-    r: linearBubbleR,
-    fill:"black"
-}); 
-
-var expoBubble7 = svg.append("circle").attr({
-    cx: expoBubbleOriginX,
-    cy: expoBubbleOriginY,
-    r: linearBubbleR,
-    fill:"black"
-}); 
 
 var expoBubble8 = svg.append("circle").attr({
     cx: expoBubbleOriginX,
@@ -156,37 +246,34 @@ var expoBubble8 = svg.append("circle").attr({
 .on("click", function(){
     console.log("click");
     if(!expoOpen){
+expoGroup1.transition(t).attr("transform", "translate("+getExpoRot(8, 1)+")");
+expoGroup2.transition(t).attr("transform", "translate("+getExpoRot(8, 2)+")");
+expoGroup3.transition(t).attr("transform", "translate("+getExpoRot(8, 3)+")");
+expoGroup4.transition(t).attr("transform", "translate("+getExpoRot(8, 4)+")");
+expoGroup5.transition(t).attr("transform", "translate("+getExpoRot(8, 5)+")");
+expoGroup6.transition(t).attr("transform", "translate("+getExpoRot(8, 6)+")");
+expoGroup7.transition(t).attr("transform", "translate("+getExpoRot(8, 7)+")");
 
-expoBubble2.transition(t).attr("transform", "rotate("+(360/8)*2+", "+centerX+","+centerY+")")
 
-expoBubble3.transition(t).attr("transform", "rotate("+(360/8)*3+", "+centerX+","+centerY+")");
-expoBubble4.transition(t).attr("transform", "rotate("+(360/8)*4+", "+centerX+","+centerY+")");
-expoBubble5.transition(t).attr("transform", "rotate("+(360/8)*5+", "+centerX+","+centerY+")");
-expoBubble6.transition(t).attr("transform", "rotate("+(360/8)*6+", "+centerX+","+centerY+")");
-expoBubble7.transition(t).attr("transform", "rotate("+(360/8)*7+", "+centerX+","+centerY+")");
-expoBubble8.transition(t).attr("transform", "rotate("+(360/8)*8+", "+centerX+","+centerY+")");  
+
+ 
 
 expoOpen = true;
 } else{
-        expoBubble1.transition().attr("transform", "rotate("+360+", "+centerX+","+centerY+")");
-expoBubble2.transition().attr("transform", "rotate("+360+", "+centerX+","+centerY+")");
-expoBubble3.transition().attr("transform", "rotate("+360+", "+centerX+","+centerY+")");
-expoBubble4.transition().attr("transform", "rotate("+360+", "+centerX+","+centerY+")");
-expoBubble5.transition().attr("transform", "rotate("+360+", "+centerX+","+centerY+")");
-expoBubble6.transition().attr("transform", "rotate("+360+", "+centerX+","+centerY+")");
-expoBubble7.transition().attr("transform", "rotate("+360+", "+centerX+","+centerY+")");
-expoBubble8.transition().attr("transform", "rotate("+360+", "+centerX+","+centerY+")");  
+    expoGroup1.transition().attr("transform", "translate("+expoBubbleOriginX+","+expoBubbleOriginY+")");
+    expoGroup2.transition().attr("transform", "translate("+expoBubbleOriginX+","+expoBubbleOriginY+")");
+    expoGroup3.transition().attr("transform", "translate("+expoBubbleOriginX+","+expoBubbleOriginY+")");
+    expoGroup4.transition().attr("transform", "translate("+expoBubbleOriginX+","+expoBubbleOriginY+")");
+    expoGroup5.transition().attr("transform", "translate("+expoBubbleOriginX+","+expoBubbleOriginY+")");
+    expoGroup6.transition().attr("transform", "translate("+expoBubbleOriginX+","+expoBubbleOriginY+")");
+    expoGroup7.transition().attr("transform", "translate("+expoBubbleOriginX+","+expoBubbleOriginY+")");
+
+
+ 
 expoOpen = false;
 }
 
 }); 
-
-
-
-
-
-
-
 
 
 
