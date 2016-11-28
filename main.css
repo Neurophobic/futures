@@ -16,6 +16,20 @@ src: url("fonts/porto.ttf") format("truetype");
 	/*transform-origin: 1000px 476px 0px;*/
 }
 
+.expoInfoTitle{
+	fill:white;
+	font-size:2em;
+	font-family: "Porto" !important;
+	letter-spacing: 2px;
+}
+
+.expoInfoText{
+	color:white;
+	letter-spacing:2px;
+	font-size:1.3em;
+	line-height: 1.1;
+}
+
 .navigation{
 	font-family: "Porto" !important;
 }
