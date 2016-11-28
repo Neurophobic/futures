@@ -20,7 +20,7 @@ var expoBubbleR = 100;
 var expoOpen = false;
 
 var t = d3.transition()
-    .duration(1000);
+    .duration(100);
 
 
  var body = d3.select("#map");
@@ -66,40 +66,40 @@ function getLinearRot(div, place){
 
 
 
-var line1 = svg.append("line")          
-    .style("stroke", "black")  
-    .attr("x1", centerX)     
-    .attr("y1", centerY)      
-    .attr("x2", centerX + ((exponentialCircleR+300) * Math.sin(toRadians(360/8))))     
-    .attr("y2", centerY - ((exponentialCircleR+300) * Math.cos(toRadians(360/8))));
+// var line1 = svg.append("line")          
+//     .style("stroke", "black")  
+//     .attr("x1", centerX)     
+//     .attr("y1", centerY)      
+//     .attr("x2", centerX + ((exponentialCircleR+300) * Math.sin(toRadians(360/8))))     
+//     .attr("y2", centerY - ((exponentialCircleR+300) * Math.cos(toRadians(360/8))));
 
-var line2 = svg.append("line")          
-    .style("stroke", "black")  
-    .attr("x1", centerX)     
-    .attr("y1", centerY)      
-    .attr("x2", centerX + ((exponentialCircleR+300) * Math.sin(toRadians((360/8)*3))))     
-    .attr("y2", centerY - ((exponentialCircleR+300) * Math.cos(toRadians((360/8)*3))));
+// var line2 = svg.append("line")          
+//     .style("stroke", "black")  
+//     .attr("x1", centerX)     
+//     .attr("y1", centerY)      
+//     .attr("x2", centerX + ((exponentialCircleR+300) * Math.sin(toRadians((360/8)*3))))     
+//     .attr("y2", centerY - ((exponentialCircleR+300) * Math.cos(toRadians((360/8)*3))));
 
-var line3 = svg.append("line")          
-    .style("stroke", "black")  
-    .attr("x1", centerX)     
-    .attr("y1", centerY)      
-    .attr("x2", centerX + ((exponentialCircleR+300) * Math.sin(toRadians((360/8)*5))))     
-    .attr("y2", centerY - ((exponentialCircleR+300) * Math.cos(toRadians((360/8)*5))));
+// var line3 = svg.append("line")          
+//     .style("stroke", "black")  
+//     .attr("x1", centerX)     
+//     .attr("y1", centerY)      
+//     .attr("x2", centerX + ((exponentialCircleR+300) * Math.sin(toRadians((360/8)*5))))     
+//     .attr("y2", centerY - ((exponentialCircleR+300) * Math.cos(toRadians((360/8)*5))));
 
-var line5 = svg.append("line")          
-    .style("stroke", "black")  
-    .attr("x1", centerX)     
-    .attr("y1", centerY)      
-    .attr("x2", centerX + ((exponentialCircleR+300) * Math.sin(toRadians((360/8)*7))))     
-    .attr("y2", centerY - ((exponentialCircleR+300) * Math.cos(toRadians((360/8)*7))));   
+// var line5 = svg.append("line")          
+//     .style("stroke", "black")  
+//     .attr("x1", centerX)     
+//     .attr("y1", centerY)      
+//     .attr("x2", centerX + ((exponentialCircleR+300) * Math.sin(toRadians((360/8)*7))))     
+//     .attr("y2", centerY - ((exponentialCircleR+300) * Math.cos(toRadians((360/8)*7))));   
 
-var centerCircle = svg.append("circle").attr({
-    cx:centerX,
-    cy:centerY,
-    r:linearCircleR/2,
-    fill:"white"
-})
+// var centerCircle = svg.append("circle").attr({
+//     cx:centerX,
+//     cy:centerY,
+//     r:linearCircleR/2,
+//     fill:"white"
+// })
 
 //exponential
 
@@ -260,31 +260,101 @@ expoGroup7.append("svg:image")
 .attr("xlink:href", "img/scope.svg");
 
 
+var expoGroup8 = svg.append("g")
+    .attr("class", "circle-container")
+    .attr("transform", "translate(" + expoBubbleOriginX + ", " + expoBubbleOriginY + ")");
 
 
-
-var expoBubble8 = svg.append("circle").attr({
-    cx: expoBubbleOriginX,
-    cy: expoBubbleOriginY,
+var expoBubble8 = expoGroup8.append("circle").attr({
+    cx: 0,
+    cy: 0,
     r: linearBubbleR,
     fill:"black"
 })
-
 .on("click", function(){
     console.log("click");
     if(!expoOpen){
+        
 expoGroup1.transition(t).attr("transform", "translate("+getExpoRot(8, 1)+")");
-expoGroup2.transition(t).attr("transform", "translate("+getExpoRot(8, 2)+")");
-expoGroup3.transition(t).attr("transform", "translate("+getExpoRot(8, 3)+")");
-expoGroup4.transition(t).attr("transform", "translate("+getExpoRot(8, 4)+")");
-expoGroup5.transition(t).attr("transform", "translate("+getExpoRot(8, 5)+")");
-expoGroup6.transition(t).attr("transform", "translate("+getExpoRot(8, 6)+")");
-expoGroup7.transition(t).attr("transform", "translate("+getExpoRot(8, 7)+")");
+expoGroup2.transition(t).attr("transform", "translate("+getExpoRot(8, 1)+")")
+    .each("end", function(){
+        return expoGroup2.transition(t).attr("transform", "translate("+getExpoRot(8, 2)+")");
+    });
 
 
+expoGroup3.transition(t).attr("transform", "translate("+getExpoRot(8, 1)+")")
+    .each("end", function(){
+        return expoGroup3.transition(t).attr("transform", "translate("+getExpoRot(8, 2)+")")
+            .each("end",function(){
+                return expoGroup3.transition(t).attr("transform", "translate("+getExpoRot(8, 3)+")");
+            });
+    });
+expoGroup4.transition(t).attr("transform", "translate("+getExpoRot(8, 1)+")")
+    .each("end",function(){
+        return expoGroup4.transition(t).attr("transform", "translate("+getExpoRot(8, 2)+")")
+            .each("end",function(){
+                return expoGroup4.transition(t).attr("transform", "translate("+getExpoRot(8, 3)+")")
+                    .each("end",function(){
+                        return expoGroup4.transition(t).attr("transform", "translate("+getExpoRot(8, 4)+")")
+                });
+            });
+    });
 
- 
+expoGroup5.transition(t).attr("transform", "translate("+getExpoRot(8, 1)+")")
+    .each("end",function(){
+        return expoGroup5.transition(t).attr("transform", "translate("+getExpoRot(8, 2)+")")
+            .each("end",function(){
+                return expoGroup5.transition(t).attr("transform", "translate("+getExpoRot(8, 3)+")")
+                    .each("end",function(){
+                        return expoGroup5.transition(t).attr("transform", "translate("+getExpoRot(8, 4)+")")
+                            .each("end",function(){
+                                return expoGroup5.transition(t).attr("transform", "translate("+getExpoRot(8, 5)+")")
+                    });
+                });
+            });
+    });
 
+
+expoGroup6.transition(t).attr("transform", "translate("+getExpoRot(8, 1)+")")
+    .each("end",function(){
+        return expoGroup6.transition(t).attr("transform", "translate("+getExpoRot(8, 2)+")")
+            .each("end",function(){
+                return expoGroup6.transition(t).attr("transform", "translate("+getExpoRot(8, 3)+")")
+                    .each("end",function(){
+                        return expoGroup6.transition(t).attr("transform", "translate("+getExpoRot(8, 4)+")")
+                            .each("end",function(){
+                                return expoGroup6.transition(t).attr("transform", "translate("+getExpoRot(8, 5)+")")
+                                    .each("end",function(){
+                                        return expoGroup6.transition(t).attr("transform", "translate("+getExpoRot(8, 6)+")")
+                        });
+                    });
+                });
+            });
+    });
+
+expoGroup7.transition(t).attr("transform", "translate("+getExpoRot(8, 1)+")")
+    .each("end",function(){
+        return expoGroup7.transition(t).attr("transform", "translate("+getExpoRot(8, 2)+")")
+            .each("end",function(){
+                return expoGroup7.transition(t).attr("transform", "translate("+getExpoRot(8, 3)+")")
+                    .each("end",function(){
+                        return expoGroup7.transition(t).attr("transform", "translate("+getExpoRot(8, 4)+")")
+                            .each("end",function(){
+                                return expoGroup7.transition(t).attr("transform", "translate("+getExpoRot(8, 5)+")")
+                                    .each("end",function(){
+                                        return expoGroup7.transition(t).attr("transform", "translate("+getExpoRot(8, 6)+")")
+                                            .each("end",function(){
+                                                return expoGroup7.transition(t).attr("transform", "translate("+getExpoRot(8, 7)+")")
+                            });
+                        });
+                    });
+                });
+            });
+    });
+
+// expoGroup5.transition(t).attr("transform", "translate("+getExpoRot(8, 5)+")");
+// expoGroup6.transition(t).attr("transform", "translate("+getExpoRot(8, 6)+")");
+// expoGroup7.transition(t).attr("transform", "translate("+getExpoRot(8, 7)+")");
 expoOpen = true;
 } else{
     expoGroup1.transition().attr("transform", "translate("+expoBubbleOriginX+","+expoBubbleOriginY+")");
@@ -294,13 +364,20 @@ expoOpen = true;
     expoGroup5.transition().attr("transform", "translate("+expoBubbleOriginX+","+expoBubbleOriginY+")");
     expoGroup6.transition().attr("transform", "translate("+expoBubbleOriginX+","+expoBubbleOriginY+")");
     expoGroup7.transition().attr("transform", "translate("+expoBubbleOriginX+","+expoBubbleOriginY+")");
-
-
- 
 expoOpen = false;
 }
 
-}); 
+});
+
+
+
+expoGroup8.append("text")
+    .attr("fill", "white")
+    .attr("x", 0)
+    .attr("y",0)
+    .style("text-anchor", "middle")
+    .text("OPTIMIZE!");
+
 
 
 
