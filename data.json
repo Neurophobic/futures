@@ -1,0 +1,146 @@
+
+   nodes: [
+   {
+     name: "Mission Control",
+     x: windowW/2,
+     y: 100,
+     type: "Main",
+     fixed: true
+   }, 
+   {
+     name: "Prediction",
+     x: windowW/5 - ((windowW/5)/2),
+     y: 300,
+     type: "Main",
+     fixed: true
+   }, 
+   {
+     name: "Auditing",
+     x: windowW/5 - ((windowW/5)/2),
+     y: 500,
+     type: "Main",
+     fixed: true
+   },
+   {
+     name: "Learning",
+     x: (windowW/5)*2 - ((windowW/5)/2),
+     y: 300,
+     type: "Main",
+     fixed: true
+   },
+   {
+     name: "Mapping",
+     x: (windowW/5)*2 - ((windowW/5)/2),
+     y: 500,
+     type: "Main",
+     fixed: true
+   },
+   {
+     name: "Planning",
+     x: (windowW/5)*3 - ((windowW/5)/2),
+     y: 400,
+     type: "Main",
+     fixed: true
+   },
+   {
+     name: "Design for Fog",
+     x: (windowW/5)*4 - ((windowW/5)/2),
+     y: 400,
+     type: "Main",
+     fixed: true
+   },
+   {
+     name: "Aftermath",
+     x: (windowW/5)*5 - ((windowW/5)/2),
+     y: 400,
+     type: "Main",
+     fixed: true
+   },
+     {
+     name: "Insight",
+     type: "insight",
+     source:8,
+     target:2,
+     force:true
+   },
+   {
+     name: "Insight",
+     type: "insight",
+     source:9,
+     target:2,
+     force:true
+   },
+   {
+     name: "Insight",
+     type: "insight",
+     source:10,
+     target:2,
+     force:true
+   },
+   {
+     name: "Example",
+     type: "example",
+     source:11,
+     target:9,
+     force:true
+   },
+
+
+	
+   ],
+   links: [
+   {
+     source: "Mission Control",
+     target: "Prediction"
+   },
+   {
+     source: "Prediction",
+     target: "Learning"
+   },
+   {
+     source: "Mission Control",
+     target: "Learning"
+   },
+   {
+     source: "Mission Control",
+     target: "Planning"
+   },
+   {
+     source: "Mission Control",
+     target: "Design for Fog"
+   },
+   {
+     source: "Learning",
+     target: "Mapping"
+   },
+   {
+     source: "Learning",
+     target: "Planning"
+   },
+   {
+     source: "Mapping",
+     target: "Planning"
+   },
+   {
+     source: "Planning",
+     target: "Design for Fog"
+   },
+   {
+     source: "Prediction",
+     target: "Auditing"
+   },
+   {
+     source: "Mission Control",
+     target: "Aftermath"
+   },
+  
+   ], 
+   forceLinks: [
+   {
+   	source:2,
+   	target:0
+   }
+   ],
+   insightNodes:[
+ 
+   ]

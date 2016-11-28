@@ -1,0 +1,312 @@
+@font-face {
+font-family: Freight;
+src: url("fonts/freight.otf") format("opentype");
+}
+@font-face {
+font-family: Porto;
+src: url("fonts/porto.ttf") format("truetype");
+}
+
+
+#map{overflow:hidden;
+
+}
+
+.circle-container{
+	/*transform-origin: 1000px 476px 0px;*/
+}
+
+.navigation{
+	font-family: "Porto" !important;
+}
+.navigation ul{
+	list-style-type: none;
+}
+.navigation li{
+	border-bottom:solid rgba(0,0,0,0.2) 3px;
+	padding-top:25px;
+}
+
+.active{
+	border-bottom:solid rgba(0,0,0,1) 3px !important;
+}
+.timeline{
+	font-family: 'CeraPro', serif;
+	color:grey;
+}
+.thesvg{
+position: relative;
+left: 50%;
+-webkit-transform: translateX(-50%);
+-ms-transform: translateX(-50%);
+transform: translateX(-50%);
+}
+.title-grid{
+	width:100%;
+	border-bottom:1px solid rgba(0,0,0,0.1);;
+
+}
+
+.main-title{
+	line-height:40px;
+}
+
+.main-title h1{
+	top:0;
+	font-family: 'Porto', serif;
+	font-size:1em;
+	margin-left:1em;
+	margin-top:1em;
+	/*margin-bottom:1em;*/
+	display:inline-block;
+}
+.main-title img{
+	display:inline-block;
+	margin-top:1em;
+	margin-left:1em;
+	/*margin-bottom:1em;*/
+	height:40px;
+
+}
+.instructions{
+	text-align: right;
+}
+.instructions h1{
+	font-family: 'Freight', serif;
+	font-size:0.7em;
+	margin:1em 1em 0 0;
+	color:rgba(0,0,0,0.6);
+}
+.Main rect{
+	fill:grey;
+	stroke:black;
+	
+}
+
+.Main circle{
+	fill:#101717;
+	/*fill:none;*/
+}
+
+.Main text{
+	font-family: 'CeraPro', serif;
+	fill:white;
+	text-transform: uppercase;
+	font-size:12px;
+	font-weight: 700;
+	letter-spacing: 2px;
+
+}
+.insightLink{
+	stroke:green;
+	fill:green;
+}
+.exampleLink{
+	stroke:black;
+}
+
+.form{
+	width:200px;
+}
+
+#add-form{
+	position: relative;
+}
+.insight{
+	fill:white;
+	stroke:black;
+}
+.insight-text{
+	padding-top:10px;
+	font-size: 2px;
+}
+
+.insight-text-box{
+	font-family: 'CeraPro', serif;
+	background-color:white;
+	border:solid 1px black;
+	font-size:5px;
+	text-align: center;
+	padding:5px;
+}
+.insight-how-might-we{
+	color:white;
+	font-family: 'CeraPro', serif;
+	background-color:black;
+	border:solid 1px black;
+	font-size:5px;
+	padding:2px;
+
+}
+
+.example-name-circle{
+	  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    align-items: center; /* Vertical center alignment */
+    justify-content: center; /* Horizontal center alignment */
+	/*overflow:hidden;*/
+	color:white;
+	font-family: 'CeraPro', serif;
+	font-size: 4px;
+	hyphens: auto;
+	text-align:center;
+}
+
+.example-name-circle:hover{
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+.example-box{
+	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    align-items: center; /* Vertical center alignment */
+     justify-content: center; /* Horizontal center alignment */
+}
+
+.main-text-box{
+	  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    align-items: center; /* Vertical center alignment */
+    justify-content: center; /* Horizontal center alignment */
+	color:white;
+	font-family: 'CeraPro', serif;
+	fill:white;
+	text-transform: uppercase;
+	font-size:1em;
+	font-weight: 700;
+	letter-spacing: 3px;
+	text-align: center;
+	overflow: visible;
+}
+
+.main-text-box h2{
+	font-size:1em;
+}
+
+.main-sub-box{
+		  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    align-items: center; /* Vertical center alignment */
+ 
+	color:white;
+	font-family: 'CeraPro', serif;
+	fill:white;
+	text-transform: uppercase;
+	font-size:8px;
+	font-weight: 200;
+	letter-spacing: 3px;
+	text-align: center;
+
+}
+#foo{
+	border-top:1px solid rgba(0,0,0,0.1);
+	width:100%;
+	
+}
+.example-card{
+	margin-top:25px;
+	border-bottom:1px solid grey;
+	padding-bottom:25px;
+	margin-bottom:20px;
+}
+.example-card h1{
+	font-family: 'CeraPro', serif;
+}
+.example-card h2{
+	font-family: 'CeraPro', serif;
+	font-size:0.8em;
+	margin-top:-15px;
+}
+
+.example-card p{
+	font-family:'CeraPro',serif;
+}
+
+.card-holder{
+
+}
+.example-card h4{
+	font-family:'CeraPro',serif;
+	margin-bottom:5px;
+}
+
+.insight-cat{
+	font-family:'CeraPro',serif;
+	padding:10px;
+}
+.title-box{
+		  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    align-items: center; /* Vertical center alignment */
+    justify-content: center; /* Horizontal center alignment */
+}
+.title-thing{
+	margin-top:10px;
+	/*text-align: center;*/
+	font-weight: 400;
+	font-family:'CeraPro',serif !important;
+	font-size:2.3em;
+	letter-spacing: 2px;
+	
+}
+
+.overflow-visible{
+	overflow:visible !important;
+}
+
+#fixedbutton {
+	font-family:'CeraPro',serif;
+    position: fixed;
+    bottom: 20px;
+    right: 20px; 
+}
+
+.sa{
+	color:#ee7f2a;
+}
+
+.mc{
+	color:#b0a496;
+}
+
+.pr{
+	color:#68a1af;
+}
+
+.le{
+	color:#4c879a;
+}
+.mo{
+	color:#cac1c4;
+}
+
+.au{
+	color:#838282;
+}
+
+.ma{
+	color:#4c879a;
+}
+
+.pl{
+	color:#71808a;
+}
+.af{
+	color:#a7bcc7;
+}

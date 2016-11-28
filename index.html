@@ -1,0 +1,74 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700" rel="stylesheet">
+
+        <link rel="stylesheet" href="client/css/normalize.css">
+        <link rel="stylesheet" href="pure-min.css">
+        <link rel="stylesheet" href="main.css">
+
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body>
+
+        <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+        <div class="main-title">
+            <div class="pure-g title-grid">
+            
+              <div class="pure-u-5-24">
+          
+
+                <h1>A Digitally Optimised Future //</h1>
+              </div>
+              <div class="pure-u-19-24 instructions">
+                <h1>ZOOM : SCROLL | PAN : DRAG 
+              </div>
+            </div>
+        </div>
+        <div class="pure-g">
+          <div class="pure-u-3-24 navigation">
+            <ul>
+              
+              <li class="active">Transport</li>
+              <li>Health</li>
+              <li>Work</li>
+              <li>Leisure</li>
+              <li>Sport</li>
+              <li>Education</li>
+              <li>Cities</li>
+              <li>Society</li>
+            </ul>
+          </div>
+            <div class="pure-u-21-24" id="map"></div>
+
+       </div>
+
+          <svg id="mySvg" width="100" height="100">
+      <defs id="mdef">
+        <pattern id="image" x="0" y="0" height="180" width="180">
+          <image x="0" y="0" width="180" height="180" xlink:href="http://placekitten.com/g/180/180"></image>
+        </pattern>
+  </defs>
+  </svg>
+      
+
+        <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.js"></script>
+        <script src="js/plugins.js"></script>
+            <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+        <script src="map.js"></script>
+
+ 
+    </body>
+</html>
