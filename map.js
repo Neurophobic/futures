@@ -10,7 +10,7 @@ var centerY = mapH/2;
 
 var linearBubbleOriginX = centerX + ((linearCircleR) * Math.sin(0));
 var linearBubbleOriginY  = centerY - ((linearCircleR) * Math.cos(0));
-var linearBubbleR = 90;
+var linearBubbleR = 100;
 
 
 var expoBubbleOriginX = centerX + ((exponentialCircleR) * Math.sin(0));
@@ -366,29 +366,29 @@ linearGroup4.append("circle").attr({
 linearGroup1.append("svg:image")
 .attr("x",-linearBubbleR)
 .attr("y",-linearBubbleR)
-.attr("width", 180)
-.attr("height", 180)
+.attr("width", linearBubbleR*2)
+.attr("height",  linearBubbleR*2)
 .attr("xlink:href", "img/scope.svg");
 
 linearGroup2.append("svg:image")
 .attr("x",-linearBubbleR)
 .attr("y",-linearBubbleR)
-.attr("width", 180)
-.attr("height", 180)
+.attr("width",  linearBubbleR*2)
+.attr("height",  linearBubbleR*2)
 .attr("xlink:href", "img/scope.svg");
 
 linearGroup3.append("svg:image")
 .attr("x",-linearBubbleR)
 .attr("y",-linearBubbleR)
-.attr("width", 180)
-.attr("height", 180)
+.attr("width",  linearBubbleR*2)
+.attr("height",  linearBubbleR*2)
 .attr("xlink:href", "img/scope.svg");
 
 linearGroup4.append("svg:image")
 .attr("x",-linearBubbleR)
 .attr("y",-linearBubbleR)
-.attr("width", 180)
-.attr("height", 180)
+.attr("width",  linearBubbleR*2)
+.attr("height",  linearBubbleR*2)
 .attr("xlink:href", "img/scope.svg");
 
 linearGroup1.transition(t).attr("transform", "translate("+getLinearRot(4, 1)+")");
