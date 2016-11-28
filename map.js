@@ -260,76 +260,76 @@ var expoBubble8 = expoGroup8.append("circle").attr({
    
     if(!expoOpen){
         
-        expoGroup1.transition(t).attr("transform", "translate("+getExpoRot(8, 1)+")");
-        expoGroup2.transition(t).attr("transform", "translate("+getExpoRot(8, 1)+")")
+        expoGroup1.transition(t).ease("circle").attr("transform", "translate("+getExpoRot(8, 1)+")");
+        expoGroup2.transition(t).ease("circle").attr("transform", "translate("+getExpoRot(8, 1)+")")
             .each("end", function(){
-                return expoGroup2.transition(t).attr("transform", "translate("+getExpoRot(8, 2)+")");
+                return expoGroup2.transition(t).ease("circle").attr("transform", "translate("+getExpoRot(8, 2)+")");
             });
 
 
-        expoGroup3.transition(t).attr("transform", "translate("+getExpoRot(8, 1)+")")
+        expoGroup3.transition(t).ease("circle").attr("transform", "translate("+getExpoRot(8, 1)+")")
             .each("end", function(){
-                return expoGroup3.transition(t).attr("transform", "translate("+getExpoRot(8, 2)+")")
+                return expoGroup3.transition(t).ease("circle").attr("transform", "translate("+getExpoRot(8, 2)+")")
                     .each("end",function(){
-                        return expoGroup3.transition(t).attr("transform", "translate("+getExpoRot(8, 3)+")");
+                        return expoGroup3.transition(t).ease("circle").attr("transform", "translate("+getExpoRot(8, 3)+")");
                     });
             });
-        expoGroup4.transition(t).attr("transform", "translate("+getExpoRot(8, 1)+")")
+        expoGroup4.transition(t).ease("circle").attr("transform", "translate("+getExpoRot(8, 1)+")")
             .each("end",function(){
-                return expoGroup4.transition(t).attr("transform", "translate("+getExpoRot(8, 2)+")")
+                return expoGroup4.transition(t).ease("circle").attr("transform", "translate("+getExpoRot(8, 2)+")")
                     .each("end",function(){
-                        return expoGroup4.transition(t).attr("transform", "translate("+getExpoRot(8, 3)+")")
+                        return expoGroup4.transition(t).ease("circle").attr("transform", "translate("+getExpoRot(8, 3)+")")
                             .each("end",function(){
-                                return expoGroup4.transition(t).attr("transform", "translate("+getExpoRot(8, 4)+")")
+                                return expoGroup4.transition(t).ease("circle").attr("transform", "translate("+getExpoRot(8, 4)+")")
                             });
                     });
             });
 
-        expoGroup5.transition(t).attr("transform", "translate("+getExpoRot(8, 1)+")")
+        expoGroup5.transition(t).ease("circle").attr("transform", "translate("+getExpoRot(8, 1)+")")
             .each("end",function(){
-                return expoGroup5.transition(t).attr("transform", "translate("+getExpoRot(8, 2)+")")
+                return expoGroup5.transition(t).ease("circle").attr("transform", "translate("+getExpoRot(8, 2)+")")
                     .each("end",function(){
-                        return expoGroup5.transition(t).attr("transform", "translate("+getExpoRot(8, 3)+")")
+                        return expoGroup5.transition(t).ease("circle").attr("transform", "translate("+getExpoRot(8, 3)+")")
                             .each("end",function(){
-                                return expoGroup5.transition(t).attr("transform", "translate("+getExpoRot(8, 4)+")")
+                                return expoGroup5.transition(t).ease("circle").attr("transform", "translate("+getExpoRot(8, 4)+")")
                                     .each("end",function(){
-                                        return expoGroup5.transition(t).attr("transform", "translate("+getExpoRot(8, 5)+")")
+                                        return expoGroup5.transition(t).ease("circle").attr("transform", "translate("+getExpoRot(8, 5)+")")
                                     });
                             });
                     });
             });
 
 
-        expoGroup6.transition(t).attr("transform", "translate("+getExpoRot(8, 1)+")")
+        expoGroup6.transition(t).ease("circle").attr("transform", "translate("+getExpoRot(8, 1)+")")
             .each("end",function(){
-                return expoGroup6.transition(t).attr("transform", "translate("+getExpoRot(8, 2)+")")
+                return expoGroup6.transition(t).ease("circle").attr("transform", "translate("+getExpoRot(8, 2)+")")
                     .each("end",function(){
-                        return expoGroup6.transition(t).attr("transform", "translate("+getExpoRot(8, 3)+")")
+                        return expoGroup6.transition(t).ease("circle").attr("transform", "translate("+getExpoRot(8, 3)+")")
                             .each("end",function(){
-                                return expoGroup6.transition(t).attr("transform", "translate("+getExpoRot(8, 4)+")")
+                                return expoGroup6.transition(t).ease("circle").attr("transform", "translate("+getExpoRot(8, 4)+")")
                                     .each("end",function(){
-                                        return expoGroup6.transition(t).attr("transform", "translate("+getExpoRot(8, 5)+")")
+                                        return expoGroup6.transition(t).ease("circle").attr("transform", "translate("+getExpoRot(8, 5)+")")
                                             .each("end",function(){
-                                                return expoGroup6.transition(t).attr("transform", "translate("+getExpoRot(8, 6)+")")
+                                                return expoGroup6.transition(t).ease("circle").attr("transform", "translate("+getExpoRot(8, 6)+")")
                                             });
                                     });
                             });
                     });
             });
 
-        expoGroup7.transition(t).attr("transform", "translate("+getExpoRot(8, 1)+")")
+        expoGroup7.transition(t).ease("circle").attr("transform", "translate("+getExpoRot(8, 1)+")")
             .each("end",function(){
-                return expoGroup7.transition(t).attr("transform", "translate("+getExpoRot(8, 2)+")")
+                return expoGroup7.transition(t).ease("circle").attr("transform", "translate("+getExpoRot(8, 2)+")")
                     .each("end",function(){
-                        return expoGroup7.transition(t).attr("transform", "translate("+getExpoRot(8, 3)+")")
+                        return expoGroup7.transition(t).ease("circle").attr("transform", "translate("+getExpoRot(8, 3)+")")
                             .each("end",function(){
-                                return expoGroup7.transition(t).attr("transform", "translate("+getExpoRot(8, 4)+")")
+                                return expoGroup7.transition(t).ease("circle").attr("transform", "translate("+getExpoRot(8, 4)+")")
                                     .each("end",function(){
-                                        return expoGroup7.transition(t).attr("transform", "translate("+getExpoRot(8, 5)+")")
+                                        return expoGroup7.transition(t).ease("circle").attr("transform", "translate("+getExpoRot(8, 5)+")")
                                             .each("end",function(){
-                                                return expoGroup7.transition(t).attr("transform", "translate("+getExpoRot(8, 6)+")")
+                                                return expoGroup7.transition(t).ease("circle").attr("transform", "translate("+getExpoRot(8, 6)+")")
                                                     .each("end",function(){
-                                                        return expoGroup7.transition(t).attr("transform", "translate("+getExpoRot(8, 7)+")")
+                                                        return expoGroup7.transition(t).ease("circle").attr("transform", "translate("+getExpoRot(8, 7)+")")
                                                     });
                                             });
                                     });
@@ -506,8 +506,7 @@ expoClip1.on("mouseover", function(){
         return;
     } else{
        return expoInfoGroup1.style("visibility", "visible"), expoClip1.style("visibility", "visible"); 
-    }
-    
+    } 
 })
 .on("mouseout", function(){
     if(expoInfoLocked){
