@@ -44,7 +44,9 @@ var zoomHeight = (windowH-scaler*windowH)/2
 
  var container = svg.append("g");
 
-
+function toRadians (angle) {
+  return angle * (Math.PI / 180);
+}
 
 //exponential
 
@@ -84,10 +86,14 @@ expoGroup1.append("circle").attr({
 });
 
 // expoGroup1.transition().attr("transform", "rotate("+(360/8)*1+", "+centerX+","+centerY+")");
-var xRot = centerX + ((exponentialCircleR) * Math.sin(180));
-var yRot = centerY - ((exponentialCircleR) * Math.cos(180));
+// var xRot = centerX + ((exponentialCircleR) * Math.sin(120));
+// var yRot = centerY - ((exponentialCircleR) * Math.cos(120));
 
+var xRot = centerX + ((exponentialCircleR) * Math.sin(toRadians(360/8)));
+var yRot = centerY - ((exponentialCircleR) * Math.cos(toRadians(360/8)));
 expoGroup1.transition().attr("transform", "translate("+xRot+","+yRot+")");
+
+
 
 
 var expoBubble1 = svg.append("circle").attr({
@@ -150,7 +156,7 @@ var expoBubble8 = svg.append("circle").attr({
 .on("click", function(){
     console.log("click");
     if(!expoOpen){
-          expoBubble1.transition().attr("transform", "rotate("+(360/8)*1+", "+centerX+","+centerY+")");
+
 expoBubble2.transition(t).attr("transform", "rotate("+(360/8)*2+", "+centerX+","+centerY+")")
 
 expoBubble3.transition(t).attr("transform", "rotate("+(360/8)*3+", "+centerX+","+centerY+")");
@@ -159,6 +165,7 @@ expoBubble5.transition(t).attr("transform", "rotate("+(360/8)*5+", "+centerX+","
 expoBubble6.transition(t).attr("transform", "rotate("+(360/8)*6+", "+centerX+","+centerY+")");
 expoBubble7.transition(t).attr("transform", "rotate("+(360/8)*7+", "+centerX+","+centerY+")");
 expoBubble8.transition(t).attr("transform", "rotate("+(360/8)*8+", "+centerX+","+centerY+")");  
+
 expoOpen = true;
 } else{
         expoBubble1.transition().attr("transform", "rotate("+360+", "+centerX+","+centerY+")");
