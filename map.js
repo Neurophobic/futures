@@ -135,8 +135,6 @@ var expoGroup7 = svg.append("g")
     .attr("class", "circle-container")
     .attr("transform", "translate(" + expoBubbleOriginX + ", " + expoBubbleOriginY + ")");
 
-
-
 expoGroup1.append("circle").attr({
     cx:0,
     cy:0,
@@ -185,8 +183,6 @@ expoGroup7.append("circle").attr({
     r:expoBubbleR,
     fill:"white"
 });
-
-
 
 expoGroup1.append("svg:image")
 .attr("x",-expoBubbleR)
@@ -249,7 +245,6 @@ expoGroup7.append("svg:image")
 .attr("height", expoBubbleR*2)
 .attr("xlink:href", "img/scope.svg");
 
-
 var expoGroup8 = svg.append("g")
     .attr("class", "circle-container")
     .attr("transform", "translate(" + expoBubbleOriginX + ", " + expoBubbleOriginY + ")");
@@ -262,104 +257,99 @@ var expoBubble8 = expoGroup8.append("circle").attr({
     fill:"black"
 })
 .on("click", function(){
-    console.log("click");
+   
     if(!expoOpen){
         
-expoGroup1.transition(t).attr("transform", "translate("+getExpoRot(8, 1)+")");
-expoGroup2.transition(t).attr("transform", "translate("+getExpoRot(8, 1)+")")
-    .each("end", function(){
-        return expoGroup2.transition(t).attr("transform", "translate("+getExpoRot(8, 2)+")");
-    });
-
-
-expoGroup3.transition(t).attr("transform", "translate("+getExpoRot(8, 1)+")")
-    .each("end", function(){
-        return expoGroup3.transition(t).attr("transform", "translate("+getExpoRot(8, 2)+")")
-            .each("end",function(){
-                return expoGroup3.transition(t).attr("transform", "translate("+getExpoRot(8, 3)+")");
+        expoGroup1.transition(t).attr("transform", "translate("+getExpoRot(8, 1)+")");
+        expoGroup2.transition(t).attr("transform", "translate("+getExpoRot(8, 1)+")")
+            .each("end", function(){
+                return expoGroup2.transition(t).attr("transform", "translate("+getExpoRot(8, 2)+")");
             });
-    });
-expoGroup4.transition(t).attr("transform", "translate("+getExpoRot(8, 1)+")")
-    .each("end",function(){
-        return expoGroup4.transition(t).attr("transform", "translate("+getExpoRot(8, 2)+")")
-            .each("end",function(){
-                return expoGroup4.transition(t).attr("transform", "translate("+getExpoRot(8, 3)+")")
-                    .each("end",function(){
-                        return expoGroup4.transition(t).attr("transform", "translate("+getExpoRot(8, 4)+")")
-                });
-            });
-    });
 
-expoGroup5.transition(t).attr("transform", "translate("+getExpoRot(8, 1)+")")
-    .each("end",function(){
-        return expoGroup5.transition(t).attr("transform", "translate("+getExpoRot(8, 2)+")")
-            .each("end",function(){
-                return expoGroup5.transition(t).attr("transform", "translate("+getExpoRot(8, 3)+")")
+
+        expoGroup3.transition(t).attr("transform", "translate("+getExpoRot(8, 1)+")")
+            .each("end", function(){
+                return expoGroup3.transition(t).attr("transform", "translate("+getExpoRot(8, 2)+")")
                     .each("end",function(){
-                        return expoGroup5.transition(t).attr("transform", "translate("+getExpoRot(8, 4)+")")
-                            .each("end",function(){
-                                return expoGroup5.transition(t).attr("transform", "translate("+getExpoRot(8, 5)+")")
+                        return expoGroup3.transition(t).attr("transform", "translate("+getExpoRot(8, 3)+")");
                     });
-                });
             });
-    });
-
-
-expoGroup6.transition(t).attr("transform", "translate("+getExpoRot(8, 1)+")")
-    .each("end",function(){
-        return expoGroup6.transition(t).attr("transform", "translate("+getExpoRot(8, 2)+")")
+        expoGroup4.transition(t).attr("transform", "translate("+getExpoRot(8, 1)+")")
             .each("end",function(){
-                return expoGroup6.transition(t).attr("transform", "translate("+getExpoRot(8, 3)+")")
+                return expoGroup4.transition(t).attr("transform", "translate("+getExpoRot(8, 2)+")")
                     .each("end",function(){
-                        return expoGroup6.transition(t).attr("transform", "translate("+getExpoRot(8, 4)+")")
+                        return expoGroup4.transition(t).attr("transform", "translate("+getExpoRot(8, 3)+")")
                             .each("end",function(){
-                                return expoGroup6.transition(t).attr("transform", "translate("+getExpoRot(8, 5)+")")
-                                    .each("end",function(){
-                                        return expoGroup6.transition(t).attr("transform", "translate("+getExpoRot(8, 6)+")")
-                        });
-                    });
-                });
-            });
-    });
-
-expoGroup7.transition(t).attr("transform", "translate("+getExpoRot(8, 1)+")")
-    .each("end",function(){
-        return expoGroup7.transition(t).attr("transform", "translate("+getExpoRot(8, 2)+")")
-            .each("end",function(){
-                return expoGroup7.transition(t).attr("transform", "translate("+getExpoRot(8, 3)+")")
-                    .each("end",function(){
-                        return expoGroup7.transition(t).attr("transform", "translate("+getExpoRot(8, 4)+")")
-                            .each("end",function(){
-                                return expoGroup7.transition(t).attr("transform", "translate("+getExpoRot(8, 5)+")")
-                                    .each("end",function(){
-                                        return expoGroup7.transition(t).attr("transform", "translate("+getExpoRot(8, 6)+")")
-                                            .each("end",function(){
-                                                return expoGroup7.transition(t).attr("transform", "translate("+getExpoRot(8, 7)+")")
+                                return expoGroup4.transition(t).attr("transform", "translate("+getExpoRot(8, 4)+")")
                             });
-                        });
                     });
-                });
             });
-    });
 
-// expoGroup5.transition(t).attr("transform", "translate("+getExpoRot(8, 5)+")");
-// expoGroup6.transition(t).attr("transform", "translate("+getExpoRot(8, 6)+")");
-// expoGroup7.transition(t).attr("transform", "translate("+getExpoRot(8, 7)+")");
-expoOpen = true;
-} else{
-    expoGroup1.transition().attr("transform", "translate("+expoBubbleOriginX+","+expoBubbleOriginY+")");
-    expoGroup2.transition().attr("transform", "translate("+expoBubbleOriginX+","+expoBubbleOriginY+")");
-    expoGroup3.transition().attr("transform", "translate("+expoBubbleOriginX+","+expoBubbleOriginY+")");
-    expoGroup4.transition().attr("transform", "translate("+expoBubbleOriginX+","+expoBubbleOriginY+")");
-    expoGroup5.transition().attr("transform", "translate("+expoBubbleOriginX+","+expoBubbleOriginY+")");
-    expoGroup6.transition().attr("transform", "translate("+expoBubbleOriginX+","+expoBubbleOriginY+")");
-    expoGroup7.transition().attr("transform", "translate("+expoBubbleOriginX+","+expoBubbleOriginY+")");
-expoOpen = false;
-}
+        expoGroup5.transition(t).attr("transform", "translate("+getExpoRot(8, 1)+")")
+            .each("end",function(){
+                return expoGroup5.transition(t).attr("transform", "translate("+getExpoRot(8, 2)+")")
+                    .each("end",function(){
+                        return expoGroup5.transition(t).attr("transform", "translate("+getExpoRot(8, 3)+")")
+                            .each("end",function(){
+                                return expoGroup5.transition(t).attr("transform", "translate("+getExpoRot(8, 4)+")")
+                                    .each("end",function(){
+                                        return expoGroup5.transition(t).attr("transform", "translate("+getExpoRot(8, 5)+")")
+                                    });
+                            });
+                    });
+            });
 
+
+        expoGroup6.transition(t).attr("transform", "translate("+getExpoRot(8, 1)+")")
+            .each("end",function(){
+                return expoGroup6.transition(t).attr("transform", "translate("+getExpoRot(8, 2)+")")
+                    .each("end",function(){
+                        return expoGroup6.transition(t).attr("transform", "translate("+getExpoRot(8, 3)+")")
+                            .each("end",function(){
+                                return expoGroup6.transition(t).attr("transform", "translate("+getExpoRot(8, 4)+")")
+                                    .each("end",function(){
+                                        return expoGroup6.transition(t).attr("transform", "translate("+getExpoRot(8, 5)+")")
+                                            .each("end",function(){
+                                                return expoGroup6.transition(t).attr("transform", "translate("+getExpoRot(8, 6)+")")
+                                            });
+                                    });
+                            });
+                    });
+            });
+
+        expoGroup7.transition(t).attr("transform", "translate("+getExpoRot(8, 1)+")")
+            .each("end",function(){
+                return expoGroup7.transition(t).attr("transform", "translate("+getExpoRot(8, 2)+")")
+                    .each("end",function(){
+                        return expoGroup7.transition(t).attr("transform", "translate("+getExpoRot(8, 3)+")")
+                            .each("end",function(){
+                                return expoGroup7.transition(t).attr("transform", "translate("+getExpoRot(8, 4)+")")
+                                    .each("end",function(){
+                                        return expoGroup7.transition(t).attr("transform", "translate("+getExpoRot(8, 5)+")")
+                                            .each("end",function(){
+                                                return expoGroup7.transition(t).attr("transform", "translate("+getExpoRot(8, 6)+")")
+                                                    .each("end",function(){
+                                                        return expoGroup7.transition(t).attr("transform", "translate("+getExpoRot(8, 7)+")")
+                                                    });
+                                            });
+                                    });
+                            });
+                    });
+            });
+
+
+        expoOpen = true;
+    } else{
+        expoGroup1.transition().attr("transform", "translate("+expoBubbleOriginX+","+expoBubbleOriginY+")");
+        expoGroup2.transition().attr("transform", "translate("+expoBubbleOriginX+","+expoBubbleOriginY+")");
+        expoGroup3.transition().attr("transform", "translate("+expoBubbleOriginX+","+expoBubbleOriginY+")");
+        expoGroup4.transition().attr("transform", "translate("+expoBubbleOriginX+","+expoBubbleOriginY+")");
+        expoGroup5.transition().attr("transform", "translate("+expoBubbleOriginX+","+expoBubbleOriginY+")");
+        expoGroup6.transition().attr("transform", "translate("+expoBubbleOriginX+","+expoBubbleOriginY+")");
+        expoGroup7.transition().attr("transform", "translate("+expoBubbleOriginX+","+expoBubbleOriginY+")");
+        expoOpen = false;
+    }
 });
-
-
 
 expoGroup8.append("text")
     .attr("fill", "white")
@@ -367,9 +357,6 @@ expoGroup8.append("text")
     .attr("y",0)
     .style("text-anchor", "middle")
     .text("OPTIMIZE!");
-
-
-
 
 
 
@@ -404,7 +391,6 @@ var linearGroup3 = svg.append("g")
 var linearGroup4 = svg.append("g")
     .attr("class", "circle-container")
     .attr("transform", "translate(" + linearBubbleOriginX + ", " + linearBubbleOriginY + ")");
-
 
 linearGroup1.append("circle").attr({
     cx:0,
@@ -483,7 +469,7 @@ var expoInfoLocked = false;
 var expoInfoGroup1 = svg.append("g")
     .attr("class", "circle-container")
     .attr("transform", "translate(" + centerX + ", " + centerY + ")")
-        .style("visibility", "hidden");
+    .style("visibility", "hidden");
 
 expoInfoGroup1
 .append("circle").attr({
@@ -505,7 +491,6 @@ var expoClipCircle1 = expoClip1.append("circle").attr({
     fill:"white",
     "stroke-width":"7px"
 });
-
 
 expoClip1.append("svg:image")
 .attr("x",-expoBubbleR)
@@ -541,10 +526,7 @@ expoClip1.on("click", function(){
         expoInfoLocked = false;
         return expoInfoGroup1.style("visibility", "hidden"), expoClip1.style("visibility", "hidden"),expoClipCircle1.attr("stroke", "none");
     }
-})
-
-
-
+});
 
 var expoInfoGroup2 = svg.append("g")
     .attr("class", "circle-container")
@@ -577,11 +559,9 @@ expoInfoGroup1.append("foreignObject")
     .attr("class","expoInfoText")
     .html('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris fringilla euismod consequat. Nam rutrum rutrum enim. Cras lacinia dolor id augue sagittis, in faucibus lectus mattis. Morbi vitae nisi nulla. Proin fermentum massa at tellus interdum cursus. Cras ullamcorper egestas dolor, nec euismod massa sollicitudin sed. Duis vitae pulvinar metus. Integer vehicula egestas enim, a mollis odio ultricies in.');
 
-
 var expoClip2 = svg.append("g")
     .attr("class", "circle-container")
-    .attr("transform", "translate(" + expoBubbleOriginX + ", " + expoBubbleOriginY + ")")
-
+    .attr("transform", "translate(" + expoBubbleOriginX + ", " + expoBubbleOriginY + ")");
 
 expoClip2.append("circle").attr({
     cx:0,
@@ -590,13 +570,12 @@ expoClip2.append("circle").attr({
     fill:"white"
 });
 
-
 expoClip2.append("svg:image")
-.attr("x",-expoBubbleR)
-.attr("y",-expoBubbleR)
-.attr("width", expoBubbleR*2)
-.attr("height", expoBubbleR*2)
-.attr("xlink:href", "img/scope.svg");
+    .attr("x",-expoBubbleR)
+    .attr("y",-expoBubbleR)
+    .attr("width", expoBubbleR*2)
+    .attr("height", expoBubbleR*2)
+    .attr("xlink:href", "img/scope.svg");
 
 expoClip2.attr("transform", "translate("+getExpoRot(8, 2)+")").style("visibility", "hidden");
 
