@@ -64,6 +64,14 @@ body{
 	line-height: 1.3;
 }
 
+.personaInfoText{
+	font-family:"Benton"!important;
+	color:white;
+	letter-spacing:3px;
+	font-size:1em;
+	line-height: 1.3;
+}
+
 .navigation{
 	font-family: "Porto" !important;
 }

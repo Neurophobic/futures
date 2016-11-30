@@ -368,7 +368,13 @@ var linearCircle = svg.append("circle").attr({
 
 var linearGroup1 = svg.append("g")
     .attr("class", "circle-container")
-    .attr("transform", "translate(" + linearBubbleOriginX + ", " + linearBubbleOriginY + ")");
+    .attr("transform", "translate(" + linearBubbleOriginX + ", " + linearBubbleOriginY + ")")
+    .on("mouseover", function(){
+    return personaInfoGroup1.style("visibility", "visible"), personaClip1.style("visibility", "visible");
+    })
+    .on("mouseout", function(){
+    return personaInfoGroup1.style("visibility", "hidden"), personaClip1.style("visibility", "hidden");
+    });
 
 var linearGroup2 = svg.append("g")
     .attr("class", "circle-container")
@@ -439,6 +445,47 @@ linearGroup3.transition(t).attr("transform", "translate("+getLinearRot(4, 3)+")"
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+var personaInfoGroup1 = svg.append("g")
+    .attr("class", "circle-container")
+    .attr("transform", "translate(" + centerX + ", " + centerY + ")")
+    .style("visibility", "hidden");
+
+personaInfoGroup1
+    .append("circle").attr({
+        cx:0,
+        cy:0,
+        r:linearCircleR+2,
+        fill:"#eab618"
+    });
+
+var personaClip1 = svg.append("g")
+    .attr("class","circle-container")
+    .attr("transform", "translate(" + linearBubbleOriginX+","+linearBubbleOriginY+")");
+
+personaClip1.append("svg:image")
+    .attr("x", -linearBubbleR)
+    .attr("y", -linearBubbleR)
+    .attr("width", linearBubbleR*2)
+    .attr("height", linearBubbleR*2)
+    .attr("xlink:href", "img/excluded.svg");
+
+personaClip1.attr("transform", "translate("+getLinearRot(4,1)+")").style("visibility", "hidden");
+
+personaClip1.on("mouseover", function(){
+    return personaInfoGroup1.style("visibility", "visible"), personaClip1.style("visibility", "visible");
+    })
+    .on("mouseout", function(){
+    return personaInfoGroup1.style("visibility", "hidden"), personaClip1.style("visibility", "hidden");
+    });
+
+personaInfoGroup1.append("foreignObject") 
+    .attr("width", linearCircleR*1.3) 
+    .attr("height", 500)
+    .attr("x", -linearCircleR/1.5)
+    .attr("y", -linearCircleR/1.5)
+    .append("xhtml:div") 
+    .attr("class","personaInfoText")
+    .html('<ul><li>Enjoys gardening at a community lot</li><li>Takes long walks but regularly forgets to charge the fitbit her grand-daughter bought for her for Christmas</li><li>Feels disconnected from her family</li></ul>');
 
 
 
@@ -468,6 +515,7 @@ var expoClipCircle1 = expoClip1.append("circle").attr({
     fill:"#f0f0f0",
    
 });
+
 
 expoClip1.append("svg:image")
 .attr("x",-expoBubbleR)
