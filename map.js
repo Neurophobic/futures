@@ -8,10 +8,10 @@ var centerX = mapW/2;
 var centerY = mapH/2;
 var linearBubbleOriginX = centerX + ((linearCircleR) * Math.sin(0));
 var linearBubbleOriginY  = centerY - ((linearCircleR) * Math.cos(0));
-var linearBubbleR = 150;
+var linearBubbleR = mapH/7;
 var expoBubbleOriginX = centerX + ((exponentialCircleR) * Math.sin(0));
 var expoBubbleOriginY  = centerY - ((exponentialCircleR) * Math.cos(0));
-var expoBubbleR = 100;
+var expoBubbleR = mapH/9;
 var expoOpen = false;
 var t = d3.transition()
     .duration(100);
