@@ -625,7 +625,7 @@ personaInfoGroup3.append("foreignObject")
     .attr("y", -squareInCircle(linearCircleR+2)/2)
     .append("xhtml:div") 
     .attr("class","personaInfoText")
-    .html('<h2>Followers</h2><h3>18 Years | Daughter | Studying Comp.Sci. | Freelance Developer</h3><p>Enjoys playing racing video games with screen and joystick at home.<br><br>Relies on the limited one-on-one time that her football coach can provide to improve her training.<br><br>Listens to music streaming from her smartphone.</p>');
+    .html('<h2>Tech Native</h2><h3>18 Years | Daughter | Studying Comp.Sci. | Freelance Developer</h3><p>Enjoys playing racing video games with screen and joystick at home.<br><br>Relies on the limited one-on-one time that her football coach can provide to improve her training.<br><br>Listens to music streaming from her smartphone.</p>');
 
 
 var expoInfoLocked = false;
