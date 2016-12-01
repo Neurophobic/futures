@@ -8,10 +8,10 @@ var centerX = mapW/2;
 var centerY = mapH/2;
 var linearBubbleOriginX = centerX + ((linearCircleR) * Math.sin(0));
 var linearBubbleOriginY  = centerY - ((linearCircleR) * Math.cos(0));
-var linearBubbleR = mapH/7;
+var linearBubbleR = 150;
 var expoBubbleOriginX = centerX + ((exponentialCircleR) * Math.sin(0));
 var expoBubbleOriginY  = centerY - ((exponentialCircleR) * Math.cos(0));
-var expoBubbleR = mapH/9;
+var expoBubbleR = 100;
 var expoOpen = false;
 var t = d3.transition()
     .duration(100);
@@ -50,6 +50,11 @@ function getLinearRot(div, place){
     var res = xRot +","+ yRot;
 
     return res;
+};
+
+function squareInCircle(r){
+    var side = Math.sqrt(r * r * 2);
+    return side;
 };
 
 
@@ -207,28 +212,28 @@ expoGroup3.append("svg:image")
 .attr("y",-expoBubbleR)
 .attr("width", expoBubbleR*2)
 .attr("height", expoBubbleR*2)
-.attr("xlink:href", "img/story1.svg");
+.attr("xlink:href", "img/story3.svg");
 
 expoGroup4.append("svg:image")
 .attr("x",-expoBubbleR)
 .attr("y",-expoBubbleR)
 .attr("width", expoBubbleR*2)
 .attr("height", expoBubbleR*2)
-.attr("xlink:href", "img/story2.svg");
+.attr("xlink:href", "img/story4.svg");
 
 expoGroup5.append("svg:image")
 .attr("x",-expoBubbleR)
 .attr("y",-expoBubbleR)
 .attr("width", expoBubbleR*2)
 .attr("height", expoBubbleR*2)
-.attr("xlink:href", "img/story1.svg");
+.attr("xlink:href", "img/story5.svg");
 
 expoGroup6.append("svg:image")
 .attr("x",-expoBubbleR)
 .attr("y",-expoBubbleR)
 .attr("width", expoBubbleR*2)
 .attr("height", expoBubbleR*2)
-.attr("xlink:href", "img/story2.svg");
+.attr("xlink:href", "img/story6.svg");
 
 
 
@@ -370,10 +375,16 @@ var linearGroup1 = svg.append("g")
     .attr("class", "circle-container")
     .attr("transform", "translate(" + linearBubbleOriginX + ", " + linearBubbleOriginY + ")")
     .on("mouseover", function(){
-    return personaInfoGroup1.style("visibility", "visible"), personaClip1.style("visibility", "visible");
+    return personaInfoGroup1.style("visibility", "visible"), 
+    personaClip1.style("visibility", "visible"), 
+    linearGroup1.style("visibility","hidden"),
+    linearGroup2.transition(t).attr("transform", "translate("+centerX+","+centerY+")"),
+    linearGroup3.transition(t).attr("transform", "translate("+centerX+","+centerY+")");
     })
     .on("mouseout", function(){
-    return personaInfoGroup1.style("visibility", "hidden"), personaClip1.style("visibility", "hidden");
+    return personaInfoGroup1.style("visibility", "hidden"), 
+    personaClip1.style("visibility", "hidden"), 
+    linearGroup1.style("visibility", "visible");
     });
 
 var linearGroup2 = svg.append("g")
@@ -445,6 +456,11 @@ linearGroup3.transition(t).attr("transform", "translate("+getLinearRot(4, 3)+")"
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+function squareInCircle(r){
+    var side = Math.sqrt(r * r * 2);
+    return side;
+}
+
 var personaInfoGroup1 = svg.append("g")
     .attr("class", "circle-container")
     .attr("transform", "translate(" + centerX + ", " + centerY + ")")
@@ -467,25 +483,29 @@ personaClip1.append("svg:image")
     .attr("y", -linearBubbleR)
     .attr("width", linearBubbleR*2)
     .attr("height", linearBubbleR*2)
-    .attr("xlink:href", "img/excluded.svg");
+    .attr("xlink:href", "img/excluded2.svg");
 
 personaClip1.attr("transform", "translate("+getLinearRot(4,1)+")").style("visibility", "hidden");
 
 personaClip1.on("mouseover", function(){
-    return personaInfoGroup1.style("visibility", "visible"), personaClip1.style("visibility", "visible");
+    return personaInfoGroup1.style("visibility", "visible"), personaClip1.style("visibility", "visible"),
+    linearGroup1.style("visibility","hidden");
     })
     .on("mouseout", function(){
-    return personaInfoGroup1.style("visibility", "hidden"), personaClip1.style("visibility", "hidden");
+    return personaInfoGroup1.style("visibility", "hidden"), personaClip1.style("visibility", "hidden"),
+    linearGroup2.transition(t).attr("transform", "translate("+getLinearRot(4, 2)+")"),
+    linearGroup3.transition(t).attr("transform", "translate("+getLinearRot(4, 3)+")"),
+    linearGroup1.style("visibility","visible");
     });
 
 personaInfoGroup1.append("foreignObject") 
-    .attr("width", linearCircleR*1.3) 
-    .attr("height", 500)
-    .attr("x", -linearCircleR/1.5)
-    .attr("y", -linearCircleR/1.5)
+    .attr("width", squareInCircle(linearCircleR+2)) 
+    .attr("height", squareInCircle(linearCircleR+2))
+    .attr("x", -squareInCircle(linearCircleR+2)/2)
+    .attr("y", -squareInCircle(linearCircleR+2)/2)
     .append("xhtml:div") 
     .attr("class","personaInfoText")
-    .html('<ul><li>Enjoys gardening at a community lot</li><li>Takes long walks but regularly forgets to charge the fitbit her grand-daughter bought for her for Christmas</li><li>Feels disconnected from her family</li></ul>');
+    .html('<h2>Previously Exluded</h2><h3>70 Years | Grandmother | Widow | Retired Midwife</h3><p>Enjoys gardening at a community lot.<br><br>Takes long walks but regularly forgets to charge the fitbit her grand-daughter bought for her for Christmas.<br><br>Feels disconnected from her family.</p>');
 
 
 
@@ -578,25 +598,16 @@ expoClip1.on("click", function(){
 //     fill:"black"
 // });
 
-var expoInfoTitle1 = expoInfoGroup1
-.append("foreignObject")
 
-.attr("x", -exponentialCircleR/1.5+20)
-.attr("y", -exponentialCircleR/1.5)
-.attr("width", 480) 
-.attr("height", 500)
-.append("xhtml:div")
-.attr("class","expoInfoTitle")
-.html("Takes long walks...");
     
 expoInfoGroup1.append("foreignObject") 
-    .attr("width", 480) 
-    .attr("height", 500)
-    .attr("x", -exponentialCircleR/1.5+20)
-    .attr("y", -exponentialCircleR/1.5+50)
+    .attr("width", squareInCircle(exponentialCircleR+2)) 
+    .attr("height", squareInCircle(exponentialCircleR+2))
+    .attr("x", -squareInCircle(exponentialCircleR+2)/2)
+    .attr("y", -squareInCircle(exponentialCircleR+2)/2)
     .append("xhtml:div") 
     .attr("class","expoInfoText")
-    .html('She puts on her comfortable walking shoes with the self charging digisoles, given to her for xmas from her granddaughter, which counts her steps and track her location on her way to the community lot.  She gets an audio alert through her connected hearing aids telling her that two of her good friends are nearby and whether or not she would like to send a voice invitation to meet at the community lot.');
+    .html('<h2>Takes long walks...</h2><p>She puts on her comfortable walking shoes with the self charging digisoles, given to her for xmas from her granddaughter, which counts her steps and track her location on her way to the community lot.  She gets an audio alert through her connected hearing aids telling her that two of her good friends are nearby and whether or not she would like to send a voice invitation to meet at the community lot.</p>');
 
 // var expoClip2 = svg.append("g")
 //     .attr("class", "circle-container")

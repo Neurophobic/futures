@@ -56,21 +56,66 @@ body{
 	color:white;
 }
 
-.expoInfoText{
+.expoInfoText p{
+	padding-top:20px;
 	font-family:"Benton"!important;
 	color:white;
 	letter-spacing:3px;
 	font-size:1.3em;
 	line-height: 1.3;
+	padding-left:50px;
+	padding-right:50px;
+}
+
+.expoInfoText h2{
+	padding-top:20px;
+	fill:white;
+	font-size:2em;
+	font-family: "Porto" !important;
+	letter-spacing: 2px;
+	color:white;
+	text-align:center;
 }
 
 .personaInfoText{
 	font-family:"Benton"!important;
 	color:white;
-	letter-spacing:3px;
-	font-size:1em;
+	letter-spacing:1px;
+	font-size:0.8em;
 	line-height: 1.3;
+	/*border:black solid 2px;*/
 }
+
+.personaInfoText h2{
+	font-family: "Porto" !important;
+	font-size:1.5em;
+	text-align: center;
+	padding-top:15px;
+	padding-bottom:0px;
+	margin-bottom:0;
+}
+
+.personaInfoText h3{
+	font-family: "Porto" !important;
+	font-size:0.8em;
+	text-align: center;
+	margin-top:5px;
+}
+
+.personaInfoText p{
+	padding:5px;
+	padding-top:5px;
+	font-size:1.1em;
+	/*padding-left:0;*/
+	/*padding-right:20px;*/
+	/*list-style-type: none;*/
+}
+
+.personaInforText ul{
+	
+	list-style-type: none;
+	}
+
 
 .navigation{
 	font-family: "Porto" !important;
