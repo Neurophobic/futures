@@ -389,11 +389,35 @@ var linearGroup1 = svg.append("g")
 
 var linearGroup2 = svg.append("g")
     .attr("class", "circle-container")
-    .attr("transform", "translate(" + linearBubbleOriginX + ", " + linearBubbleOriginY + ")");
+    .attr("transform", "translate(" + linearBubbleOriginX + ", " + linearBubbleOriginY + ")")
+    .on("mouseover", function(){
+    return personaInfoGroup2.style("visibility", "visible"), 
+    personaClip2.style("visibility", "visible"), 
+    linearGroup2.style("visibility","hidden"),
+    linearGroup1.transition(t).attr("transform", "translate("+centerX+","+centerY+")"),
+    linearGroup3.transition(t).attr("transform", "translate("+centerX+","+centerY+")");
+    })
+    .on("mouseout", function(){
+    return personaInfoGroup2.style("visibility", "hidden"), 
+    personaClip2.style("visibility", "hidden"), 
+    linearGroup2.style("visibility", "visible");
+    });
 
 var linearGroup3 = svg.append("g")
     .attr("class", "circle-container")
-    .attr("transform", "translate(" + linearBubbleOriginX + ", " + linearBubbleOriginY + ")");
+    .attr("transform", "translate(" + linearBubbleOriginX + ", " + linearBubbleOriginY + ")")
+    .on("mouseover", function(){
+    return personaInfoGroup3.style("visibility", "visible"), 
+    personaClip3.style("visibility", "visible"), 
+    linearGroup3.style("visibility","hidden"),
+    linearGroup1.transition(t).attr("transform", "translate("+centerX+","+centerY+")"),
+    linearGroup2.transition(t).attr("transform", "translate("+centerX+","+centerY+")");
+    })
+    .on("mouseout", function(){
+    return personaInfoGroup3.style("visibility", "hidden"), 
+    personaClip3.style("visibility", "hidden"), 
+    linearGroup3.style("visibility", "visible");
+    });
 
 
 
@@ -507,6 +531,101 @@ personaInfoGroup1.append("foreignObject")
     .attr("class","personaInfoText")
     .html('<h2>Previously Exluded</h2><h3>70 Years | Grandmother | Widow | Retired Midwife</h3><p>Enjoys gardening at a community lot.<br><br>Takes long walks but regularly forgets to charge the fitbit her grand-daughter bought for her for Christmas.<br><br>Feels disconnected from her family.</p>');
 
+
+//PERSONA 2
+var personaInfoGroup2 = svg.append("g")
+    .attr("class", "circle-container")
+    .attr("transform", "translate(" + centerX + ", " + centerY + ")")
+    .style("visibility", "hidden");
+
+personaInfoGroup2
+    .append("circle").attr({
+        cx:0,
+        cy:0,
+        r:linearCircleR+2,
+        fill:"#eab618"
+    });
+
+var personaClip2 = svg.append("g")
+    .attr("class","circle-container")
+    .attr("transform", "translate(" + linearBubbleOriginX+","+linearBubbleOriginY+")");
+
+personaClip2.append("svg:image")
+    .attr("x", -linearBubbleR)
+    .attr("y", -linearBubbleR)
+    .attr("width", linearBubbleR*2)
+    .attr("height", linearBubbleR*2)
+    .attr("xlink:href", "img/followers2.svg");
+
+personaClip2.attr("transform", "translate("+getLinearRot(4,2)+")").style("visibility", "hidden");
+
+personaClip2.on("mouseover", function(){
+    return personaInfoGroup2.style("visibility", "visible"), personaClip2.style("visibility", "visible"),
+    linearGroup2.style("visibility","hidden");
+    })
+    .on("mouseout", function(){
+    return personaInfoGroup2.style("visibility", "hidden"), personaClip2.style("visibility", "hidden"),
+    linearGroup1.transition(t).attr("transform", "translate("+getLinearRot(4, 1)+")"),
+    linearGroup3.transition(t).attr("transform", "translate("+getLinearRot(4, 3)+")"),
+    linearGroup2.style("visibility","visible");
+    });
+
+personaInfoGroup2.append("foreignObject") 
+    .attr("width", squareInCircle(linearCircleR+2)) 
+    .attr("height", squareInCircle(linearCircleR+2))
+    .attr("x", -squareInCircle(linearCircleR+2)/2)
+    .attr("y", -squareInCircle(linearCircleR+2)/2)
+    .append("xhtml:div") 
+    .attr("class","personaInfoText")
+    .html('<h2>Followers</h2><h3>40 Years | Dad | Architect</h3><p>Streams matches of his favorite football team online and occasionally meets with his friends to watch a match at the local pub.<br><br>Listen to music saved on their smartphones.</p>');
+
+//persona 3
+
+var personaInfoGroup3 = svg.append("g")
+    .attr("class", "circle-container")
+    .attr("transform", "translate(" + centerX + ", " + centerY + ")")
+    .style("visibility", "hidden");
+
+personaInfoGroup3
+    .append("circle").attr({
+        cx:0,
+        cy:0,
+        r:linearCircleR+2,
+        fill:"#eab618"
+    });
+
+var personaClip3 = svg.append("g")
+    .attr("class","circle-container")
+    .attr("transform", "translate(" + linearBubbleOriginX+","+linearBubbleOriginY+")");
+
+personaClip3.append("svg:image")
+    .attr("x", -linearBubbleR)
+    .attr("y", -linearBubbleR)
+    .attr("width", linearBubbleR*2)
+    .attr("height", linearBubbleR*2)
+    .attr("xlink:href", "img/tech2.svg");
+
+personaClip3.attr("transform", "translate("+getLinearRot(4,3)+")").style("visibility", "hidden");
+
+personaClip3.on("mouseover", function(){
+    return personaInfoGroup3.style("visibility", "visible"), personaClip3.style("visibility", "visible"),
+    linearGroup3.style("visibility","hidden");
+    })
+    .on("mouseout", function(){
+    return personaInfoGroup3.style("visibility", "hidden"), personaClip3.style("visibility", "hidden"),
+    linearGroup1.transition(t).attr("transform", "translate("+getLinearRot(4, 1)+")"),
+    linearGroup2.transition(t).attr("transform", "translate("+getLinearRot(4, 2)+")"),
+    linearGroup3.style("visibility","visible");
+    });
+
+personaInfoGroup3.append("foreignObject") 
+    .attr("width", squareInCircle(linearCircleR+2)) 
+    .attr("height", squareInCircle(linearCircleR+2))
+    .attr("x", -squareInCircle(linearCircleR+2)/2)
+    .attr("y", -squareInCircle(linearCircleR+2)/2)
+    .append("xhtml:div") 
+    .attr("class","personaInfoText")
+    .html('<h2>Followers</h2><h3>18 Years | Daughter | Studying Comp.Sci. | Freelance Developer</h3><p>Enjoys playing racing video games with screen and joystick at home.<br><br>Relies on the limited one-on-one time that her football coach can provide to improve her training.<br><br>Listens to music streaming from her smartphone.</p>');
 
 
 var expoInfoLocked = false;
